@@ -11,14 +11,11 @@ $fs = 0.4;
 
 // *** Model Parameters ***
 
-
 width = 120;
 height = 70;
 thickness = 5;
 corner_rounding = 10;
 screw_hole_diameter = 6;
-
-
 
 
 //
@@ -49,9 +46,7 @@ module build_model() {
 
     difference() {
         mount_body();
-
         screw_hole();
-        
     }
 }
 
