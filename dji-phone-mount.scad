@@ -16,7 +16,7 @@ width = 110;
 height = 70;
 thickness = 5;
 corner_rounding = 20;
-
+screw_hole_diameter = 6;
 
 
 
@@ -25,8 +25,12 @@ corner_rounding = 20;
 // Creates the main body of the mount
 //
 module mount_body() {
-    cuboid([width, height, thickness], anchor=FRONT+LEFT+BOT, 
-        rounding=corner_rounding, except=[TOP,BOTTOM]);
+    difference() {
+        cuboid([width, height, thickness], anchor=FRONT+LEFT+BOT, 
+            rounding=corner_rounding, except=[TOP,BOTTOM]);
+        translate([width/2, height/2, thickness/2])
+            cylinder(d=screw_hole_diameter, h=thickness + 1, center=true);
+    }
 }
   
 
