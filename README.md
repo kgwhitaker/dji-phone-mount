@@ -20,7 +20,7 @@ This model is built using the tools listed below. Install these tools and you ca
 
 ## Printing the Mount and Assembly
 
-1. Print the mount base.  I used PETG and the "strength" settings in the slicer (25% infill with 6 perimeters).
+1. Print the mount base.  I used PETG and the "strength" settings in the slicer (25% infill with 6 perimeters).  I enabled supports for the bottom inset for the bolts that hold the Quadlock base.
 2. Attach the _Concealed Small Base_ to the printed part using two bolts.
 
 ![Printed Mount Base](images/mount-base.jpeg)
