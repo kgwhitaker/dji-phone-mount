@@ -20,10 +20,21 @@ This model is built using the tools listed below. Install these tools and you ca
 
 ## Printing the Mount and Assembly
 
-1. Print the mount base.  I used PETG and the "strength" settings in the slicer (25% infill with 6 perimeters).
-2. Attach the _Concealed Small Base_ to the printed part using two bolts. 
+1. Print the mount base.  I used PETG and the "strength" settings in the slicer (25% infill with 6 perimeters).  I enabled supports for the bottom inset for the bolts that hold the Quadlock base.
+2. Attach the _Concealed Small Base_ to the printed part using two bolts.
+
+![Printed Mount Base](images/mount-base.jpeg)
+
 3. Attach the _Leaver Head_ using the provided screw with the lever oriented perpendicular to the long edge of the printed part.
+
+![Printed Mount Base](images/mount-lever.jpeg)
 
 That's all there is to it.  Insert it into your drone controller as if it was a phone, and attach your phone to the Quadlock
 head.
+
+![Printed Mount Base](images/mount-controller.jpeg)
+![Printed Mount Base](images/mount-phone.jpeg)
+
+
+
 
