@@ -36,7 +36,7 @@ module mount_body() {
 
 
         translate([0, (height * 0.2) / 2, slot_thickness])
-            wedge([width, height * 0.8, slot_thickness * 2], anchor=FRONT+LEFT+BOT);  
+            wedge([width, height * 0.8, slot_thickness * 3], anchor=FRONT+LEFT+BOT);  
 
     }
 }
@@ -48,26 +48,25 @@ module screw_hole() {
     screw_spacing = 25;
     y_pos = height / 3;
 
-    wedge_angle = atan2(1, slot_thickness * 2);
+    wedge_angle = 8.9;
 
     echo("wedge_angle =", wedge_angle); // Debug statement to print wedge_angle
 
     translate([((width/2) - (screw_spacing / 2)), y_pos, slot_thickness/2 +1])
         rotate([-wedge_angle, 0, 0])
-            cylinder(d=screw_hole_diameter, h=(slot_thickness * 4), center=true);
-        // cylinder(d=screw_hole_diameter, h=(slot_thickness * 4), center=true);
+            cylinder(d=screw_hole_diameter, h=(slot_thickness * 5), center=true);
 
     translate([((width/2) - (screw_spacing / 2)), y_pos, 0])
         rotate([-wedge_angle, 0, 0])
-            cylinder(d=nut_sink_diameter, h=slot_thickness * 2, center=true);
-        // cylinder(d=nut_sink_diameter, h=slot_thickness * 2, center=true);
-
+            cylinder(d=nut_sink_diameter, h=slot_thickness, center=true);
 
     translate([((width/2) + (screw_spacing / 2)), y_pos, slot_thickness/2 + 1])
-        cylinder(d=screw_hole_diameter, h=(slot_thickness * 4), center=true);
+        rotate([-wedge_angle, 0, 0])
+            cylinder(d=screw_hole_diameter, h=(slot_thickness * 5), center=true);
 
     translate([((width/2) + (screw_spacing / 2)), y_pos, 0])
-        cylinder(d=nut_sink_diameter, h=slot_thickness * 2, center=true);
+        rotate([-wedge_angle, 0, 0])
+            cylinder(d=nut_sink_diameter, h=slot_thickness, center=true);
 
 }
 
@@ -80,7 +79,6 @@ module build_model() {
         mount_body();
         screw_hole();
     }
-
         // screw_hole();
 
 }
