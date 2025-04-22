@@ -16,15 +16,12 @@ width = 120;
 height = 70;
 
 
-// Thickness for the slots that insert into the rubber clamp of the controller
+// Thickness for the slots that insert into the rubber clamp of the controller.
 slot_thickness = 3;
 
 corner_rounding = 8;
 screw_hole_diameter = 6;
 nut_sink_diameter = 12;
-
-
-
 
 //
 // Creates the main body of the mount
@@ -48,11 +45,11 @@ module screw_hole() {
     screw_spacing = 25;
     y_pos = height / 3;
 
+    // Angle of the wedge so that screw holes are perpendicular to the wedge slope.
+    // TODO: Calculate this value.
     wedge_angle = 8.9;
 
-    echo("wedge_angle =", wedge_angle); // Debug statement to print wedge_angle
-
-    translate([((width/2) - (screw_spacing / 2)), y_pos, slot_thickness/2 +1])
+    translate([((width/2) - (screw_spacing / 2)), y_pos, slot_thickness / 2 +1])
         rotate([-wedge_angle, 0, 0])
             cylinder(d=screw_hole_diameter, h=(slot_thickness * 5), center=true);
 
@@ -60,7 +57,7 @@ module screw_hole() {
         rotate([-wedge_angle, 0, 0])
             cylinder(d=nut_sink_diameter, h=slot_thickness, center=true);
 
-    translate([((width/2) + (screw_spacing / 2)), y_pos, slot_thickness/2 + 1])
+    translate([((width/2) + (screw_spacing / 2)), y_pos, slot_thickness / 2 + 1])
         rotate([-wedge_angle, 0, 0])
             cylinder(d=screw_hole_diameter, h=(slot_thickness * 5), center=true);
 
@@ -79,7 +76,6 @@ module build_model() {
         mount_body();
         screw_hole();
     }
-        // screw_hole();
 
 }
 
