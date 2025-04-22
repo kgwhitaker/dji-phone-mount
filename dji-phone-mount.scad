@@ -19,6 +19,8 @@ height = 70;
 // Thickness for the slots that insert into the rubber clamp of the controller.
 slot_thickness = 3;
 
+//
+
 corner_rounding = 8;
 screw_hole_diameter = 6;
 nut_sink_diameter = 12;
@@ -47,7 +49,10 @@ module screw_hole() {
 
     // Angle of the wedge so that screw holes are perpendicular to the wedge slope.
     // TODO: Calculate this value.
-    wedge_angle = 8.9;
+    // wedge_angle = 8.9;
+
+    wedge_angle = 90 - atan((height * 0.8) / (slot_thickness * 3));
+    echo("wedge_angle =", wedge_angle);
 
     translate([((width/2) - (screw_spacing / 2)), y_pos, slot_thickness / 2 +1])
         rotate([-wedge_angle, 0, 0])
