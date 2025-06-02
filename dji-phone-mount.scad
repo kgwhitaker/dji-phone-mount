@@ -3,6 +3,8 @@
 // a quadlock adapter bolted on.
 //
 
+// Required Library.  You must install in OpenSCAD for the model.
+// The Belfry OpenScad Library, v2.0.: https://github.com/BelfrySCAD/BOSL2
 include <BOSL2/std.scad>
 
 // 3D Model Resolution.  
